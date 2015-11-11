@@ -80,16 +80,7 @@
             
             
             var timer = setInterval(slideshow, 2000);
-            
-            $("#slides img:visible").on("click", function() {
-                console.log(timer);
-                if (timer != null) {
-                    clearInterval(timer);
-                    timer = null;
-                } else {
-                    timer = setInterval(slideshow, 2000);
-                }
-            });
+
             
             $("li a").on("click", function() {
                 clearInterval(timer);
@@ -99,8 +90,8 @@
                 
                 imageCounter = $(this).attr("id");
                 nextImage = $("img[alt*='"+imageCounter+"']");
-                $("#slides img:visible").fadeOut(500, function() {
-                    $(nextImage).fadeIn(500);
+                $("#slides img:visible").fadeOut(1000, function() {
+                    $(nextImage).fadeIn(1000);
                     $("#slides img").not(nextImage).hide();
                 });
  
